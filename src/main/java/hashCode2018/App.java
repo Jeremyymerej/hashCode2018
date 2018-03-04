@@ -6,10 +6,14 @@ import java.util.*;
 
 /**
  * TO DO  
- * ajouter un id au trajet pour les retrouver et printer l'id dans le résultat  
+ * ajouter un id au trajet pour les retrouver et printer l'id dans le résultat  -> done
  * compter les points 
  * swap les trajets si + de points après modulo 
  * voir pourquoi pas plus de points avec j+1 
+ * 
+ * 
+ * REMARQUES 
+ * L'ordre des courses dans le res est l'ordre dans laquelle la voiture fait les courses 
  *
  */
 public class App 
@@ -43,14 +47,18 @@ public class App
         		//f1 = new Fichier("/home/ringo/Bureau/hashCode2018/e_high_bonus.in");
         }
   
-    	Greedy1 g = new Greedy1(f1.tabloTrajet, f1.tabloVoiture); 
-    	g.run(); 
+    	//Greedy1 g = new Greedy1(f1.tabloTrajet, f1.tabloVoiture); 
+    	//g.run(); 
 
-        //Modulo g = new Modulo(f1.tabloTrajet, f1.tabloVoiture); 
-        //g.run(); 
-        
+        Modulo g = new Modulo(f1.tabloTrajet, f1.tabloVoiture); 
+        g.run(); 
+        g.swap1();
         resultat = g.resultat; 
 
+        Points p = new Points(resultat, f1.tabloTrajet, f1.tabloVoiture); 
+        p.compter();
+        //System.out.println(p.points);
+        
         int cpt = 0;
         for(Trajet t : g.trajets){
             if(!t.done){
