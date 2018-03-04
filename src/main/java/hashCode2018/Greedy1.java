@@ -34,7 +34,10 @@ public class Greedy1 {
                 Trajet t = trajets.get(j);
                 Voiture v = voitures.get(i);
                 if(!(t.done)){
-                    if(v.dispo == t.earlierStart && v.dispo + t.distance + v.distance(t) < v.dispoMax){
+                	
+                	/*Il faudrait pouvoir activé le v.distance(t) juste pour le jeu de données A */
+                	
+                    if(v.dispo /*+ v.distance(t)*/ == t.earlierStart && v.dispo + t.distance + v.distance(t) < v.dispoMax){
                         //if(v.x == t.startX && v.y == t.startY && v.dispo >= t.earlierStart && t.latestEnd > Math.max(v.dispo,t.earlierStart) + v.distance(t) + t.distance){
                         boolean k = v.dispo == t.earlierStart;
 
@@ -49,7 +52,7 @@ public class Greedy1 {
                       //  }
                       //il faudrait calculer les points ailleurs si on veut le faire (ou pas nécessaire... ) 
                         resultat.get(i).add(j);
-                        System.out.println("Boucle 1 -> " + v.toString());
+                       // System.out.println("Boucle 1 -> " + v.toString());
                     }
                 }
             }
