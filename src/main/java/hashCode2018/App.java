@@ -10,9 +10,11 @@ import java.util.*;
  */
 public class App 
 {
+    static ArrayList<ArrayList<Integer>> resultat = new ArrayList<ArrayList<Integer>>();
+
     public static void main( String[] args ){
         int points = 0;
-        int f = 1; 
+        int f = 5; 
         //un peu sale encore :P 
         Fichier f1 = new Fichier("/Users/Laetitia/Documents/hashCode2018/a_example.in"); 
         switch (f){
@@ -37,9 +39,13 @@ public class App
         		//f1 = new Fichier("/home/ringo/Bureau/hashCode2018/e_high_bonus.in");
         }
   
-    	Greedy1 g = new Greedy1(f1.tabloTrajet, f1.tabloVoiture); 
-    	g.run(); 
+    	//Greedy1 g = new Greedy1(f1.tabloTrajet, f1.tabloVoiture); 
+    	//g.run(); 
 
+        Modulo g = new Modulo(f1.tabloTrajet, f1.tabloVoiture); 
+        g.run(); 
+        
+        resultat = g.resultat; 
 
         int cpt = 0;
         for(Trajet t : g.trajets){
@@ -55,10 +61,10 @@ public class App
         //System.out.println(g.resultat);
 
        // System.out.println("!!!!!!!!!!!!!!!STOP!!!!!!!!!!!");
-        for(int k = 0; k < g.resultat.size(); k++){
-            System.out.print(g.resultat.get(k).size());
-            for(int l =0; l < g.resultat.get(k).size(); l++){
-                System.out.print(" " + g.resultat.get(k).get(l));
+        for(int k = 0; k < resultat.size(); k++){
+            System.out.print(resultat.get(k).size());
+            for(int l =0; l < resultat.get(k).size(); l++){
+                System.out.print(" " + resultat.get(k).get(l));
             }
             System.out.println();
         }
