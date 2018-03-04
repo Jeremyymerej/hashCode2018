@@ -21,26 +21,26 @@ public class Fichier {
 		this.filePathRead = fp;
 	}
 
-	public Fichier(ExampleLetter exampleLetter){
-        String path;
-        switch (exampleLetter){
+	public Fichier(ExampleLetter inputLetter){
+        String path = "./HashCodeInputs/";
+        switch (inputLetter){
             case A :
-                path = "./a_example.in";
+                path += "a_example.in";
                 break;
             case B :
-                path ="./b_should_be_easy.in";
+                path += "b_should_be_easy.in";
                 break;
             case C :
-                path = "./c_no_hurry.in";
+                path += "c_no_hurry.in";
                 break;
             case D :
-                path = "./d_metropolis.in";
+                path += "d_metropolis.in";
                 break;
             case E :
-                path = "./e_high_bonus.in";
+                path += "e_high_bonus.in";
                 break;
             default:
-                path = "./a_example.in";
+                path += "a_example.in";
         }
         this.filePathRead = path;
     }
