@@ -1,4 +1,4 @@
-package hashCode2018;
+package hashCode2018.Acteurs;
 
 import java.util.Comparator;
 
@@ -110,7 +110,6 @@ public class Trajet implements Comparable<Trajet> {
 //        }
 //        return 0;
 //    }
-
 
 
     public int compareTo(Trajet o) {

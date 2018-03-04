@@ -1,4 +1,4 @@
-package hashCode2018;
+package hashCode2018.Acteurs;
 
 public class Voiture {
 

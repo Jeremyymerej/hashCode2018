@@ -1,11 +1,17 @@
 package hashCode2018;
 
-import java.io.IOException;
-import java.io.RandomAccessFile;
+import hashCode2018.Acteurs.Points;
+import hashCode2018.Acteurs.Trajet;
+import hashCode2018.Acteurs.Voiture;
+import hashCode2018.Algo.Modulo;
+import hashCode2018.Fichiers.Fichier;
+
 import java.util.*;
 
+import static hashCode2018.Fichiers.ExampleLetter.*;
+
 /**
- * TO DO  
+ * TODO
  * ajouter un id au trajet pour les retrouver et printer l'id dans le résultat  -> done
  * compter les points 
  * swap les trajets si + de points après modulo 
@@ -22,42 +28,25 @@ public class App
 
     public static void main( String[] args ){
         int points = 0;
-        int f = 5; 
-        //un peu sale encore :P 
-        Fichier f1 = new Fichier("/Users/Laetitia/Documents/hashCode2018/a_example.in"); 
-        switch (f){
-        	case 1 : 
-        		f1 = new Fichier("/Users/Laetitia/Documents/hashCode2018/a_example.in");
-        		//f1 = new Fichier("/home/ringo/Bureau/hashCode2018/a_example.in");
-        		break; 
-        	case 2 : 
-        		f1 = new Fichier("/Users/Laetitia/Documents/hashCode2018/b_should_be_easy.in");
-        		//f1 = new Fichier("/home/ringo/Bureau/hashCode2018/b_should_be_easy.in");
-        		break; 
-        	case 3 : 
-        		f1 = new Fichier("/Users/Laetitia/Documents/hashCode2018/c_no_hurry.in");
-        		//f1 = new Fichier("/home/ringo/Bureau/hashCode2018/c_no_hurry.in");
-        		break; 
-        	case 4 : 
-        		f1 = new Fichier("/Users/Laetitia/Documents/hashCode2018/d_metropolis.in");
-        		//f1 = new Fichier("/home/ringo/Bureau/hashCode2018/d_metropolis.in");
-        		break; 
-        	case 5 : 
-        		f1 = new Fichier("/Users/Laetitia/Documents/hashCode2018/e_high_bonus.in");
-        		//f1 = new Fichier("/home/ringo/Bureau/hashCode2018/e_high_bonus.in");
-        }
-  
-    	//Greedy1 g = new Greedy1(f1.tabloTrajet, f1.tabloVoiture); 
-    	//g.run(); 
 
-        Modulo g = new Modulo(f1.tabloTrajet, f1.tabloVoiture); 
+        Fichier fichier = new Fichier(E);
+
+        ArrayList<Trajet> tabloTrajet = new ArrayList<Trajet>();
+        ArrayList<Voiture> tabloVoiture = new ArrayList<Voiture>();
+        fichier.parseInto(tabloTrajet,tabloVoiture);
+    	/*
+    	Greedy1 g = new Greedy1(tabloTrajet, tabloVoiture);
+    	g.run(); 
+        */
+
+        Modulo g = new Modulo(tabloTrajet, tabloVoiture);
         g.run(); 
         g.swap1();
         resultat = g.resultat; 
 
-        Points p = new Points(resultat, f1.tabloTrajet, f1.tabloVoiture); 
+        Points p = new Points(resultat, tabloTrajet, tabloVoiture);
         p.compter();
-        //System.out.println(p.points);
+        System.out.println(p.points);
         
         int cpt = 0;
         for(Trajet t : g.trajets){
@@ -73,15 +62,19 @@ public class App
         //System.out.println(g.resultat);
 
        // System.out.println("!!!!!!!!!!!!!!!STOP!!!!!!!!!!!");
+        String strResult = "";
         for(int k = 0; k < resultat.size(); k++){
-            System.out.print(resultat.get(k).size());
+            //System.out.print(resultat.get(k).size());
+            strResult += resultat.get(k).size();
             for(int l =0; l < resultat.get(k).size(); l++){
-                System.out.print(" " + resultat.get(k).get(l));
+                //System.out.print(" " + resultat.get(k).get(l));
+                strResult += " " + resultat.get(k).get(l);
             }
-            System.out.println();
+            strResult += "\n";
+            //System.out.println();
         }
+        System.out.println(strResult);
         //System.out.println(points);
-
     }
 
 }

@@ -1,28 +1,27 @@
-package hashCode2018;
+package hashCode2018.Algo;
+
+import hashCode2018.Acteurs.Trajet;
+import hashCode2018.Acteurs.Voiture;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Greedy1 {
-    ArrayList<Trajet> trajets = new ArrayList<Trajet>();
-    ArrayList<Voiture> voitures = new ArrayList<Voiture>();
-    ArrayList<ArrayList<Integer>> resultat = new ArrayList<ArrayList<Integer>>();
+/**
+ * Greedy de jeudi soir :
+ * On trie les trajets par leur fin maximum possible
+ * On attribue a chaque voiture un max de trajet
+ * 		d'abord en favorisant ceux qui peuvent exactement commencer quand la voiture est disponible
+ * 		puis on attribue les trajets qui restent en vérifiant qui satisfassent les contraintes
+ * 			(ne vont pas faire finir trop tard ni en nombre de pas (pour la voiture) ni par rapport au lastestEnd (trajet) )
+ */
+public class Greedy1 extends AbstractAlgorithme{
+    
+    public Greedy1(ArrayList<Trajet> trajets, ArrayList<Voiture> voitures){
+    	this.trajets = trajets;
+    	this.voitures = voitures;
+    }
 
-    
-    Greedy1(ArrayList<Trajet> T, ArrayList<Voiture> V){
-    	this.trajets = T; 
-    	this.voitures = V; 
-    } 
-    
-    /**
-     * Greedy de jeudi soir : 
-     * On trie les trajets par leur fin maximum possible 
-     * On attribue a chaque voiture un max de trajet 
-     * 		d'abord en favorisant ceux qui peuvent exactement commencer quand la voiture est disponible 
-     * 		puis on attribue les trajets qui restent en vérifiant qui satisfassent les contraintes 
-     * 			(ne vont pas faire finir trop tard ni en nombre de pas (pour la voiture) ni par rapport au lastestEnd (trajet) )
-     */
-    void run(){ 
+    public void run(){
     	Collections.sort(trajets);
 
         for(Voiture v : voitures){
@@ -83,4 +82,5 @@ public class Greedy1 {
 
         }
     }
+
 }

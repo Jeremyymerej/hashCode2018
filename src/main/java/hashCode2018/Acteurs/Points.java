@@ -1,23 +1,23 @@
-package hashCode2018;
+package hashCode2018.Acteurs;
 
 import java.util.ArrayList;
 
 public class Points {
 	
-	ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
-	int points = 0; 
-	ArrayList<Trajet> trajets = new ArrayList<Trajet>(); //version non triée! 
-	ArrayList<Voiture> voitures = new ArrayList<Voiture>();
+	public ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
+	public int points = 0;
+	public ArrayList<Trajet> trajets = new ArrayList<Trajet>(); //version non triée!
+	public ArrayList<Voiture> voitures = new ArrayList<Voiture>();
 	   
 	    
-	Points(ArrayList<ArrayList<Integer>> res, ArrayList<Trajet> trajets, ArrayList<Voiture> voitures){
+	public Points(ArrayList<ArrayList<Integer>> res, ArrayList<Trajet> trajets, ArrayList<Voiture> voitures){
 		this.res = res; 
 		this.voitures = voitures; 
 		this.trajets = trajets;
 	}
 	
 	
-	void compter(){ 
+	public void compter(){
 		Voiture v = null;  
 		Trajet t = null; 
 		boolean bonus = false; 
