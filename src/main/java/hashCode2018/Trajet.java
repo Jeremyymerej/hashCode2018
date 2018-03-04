@@ -3,6 +3,8 @@ package hashCode2018;
 import java.util.Comparator;
 
 public class Trajet implements Comparable<Trajet> {
+	
+	public int id = 0; 
 
     public int startX = 0;
     public int startY = 0;

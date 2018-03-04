@@ -23,6 +23,7 @@ public class Fichier {
             RandomAccessFile file = new RandomAccessFile(this.filepath, "r");
             String str;
             int i = 0;
+            int newId = 0;
             while ((str = file.readLine()) != null) { //par ligne
 
                 ArrayList<Integer> firstline = new ArrayList();
@@ -31,6 +32,7 @@ public class Fichier {
                     firstline.add(s.nextInt());
                 }
 
+                 
                 //System.out.println(str);
                 if( i == 0){ //infos de base
                     this.nbVoiture = firstline.get(2);
@@ -52,6 +54,7 @@ public class Fichier {
 
                 }else{ //rides
                     Trajet t = this.tabloTrajet.get(i-1);
+                    t.id = newId;
                     t.setStartX((Integer)firstline.get(0));
                     t.setStartY((Integer)firstline.get(1));
                     t.setEndX((Integer)firstline.get(2));
@@ -59,6 +62,8 @@ public class Fichier {
                     t.setEarlierStart((Integer)firstline.get(4));
                     t.setLatestEnd((Integer)firstline.get(5));
                     t.setDistance(Math.abs(t.endX - t.startX) + Math.abs(t.endY - t.startY));
+                    newId++;
+                    
 
                 }
             i++;

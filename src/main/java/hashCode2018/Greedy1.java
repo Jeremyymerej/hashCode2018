@@ -51,7 +51,7 @@ public class Greedy1 {
                       //      points += t.bonus;
                       //  }
                       //il faudrait calculer les points ailleurs si on veut le faire (ou pas nécessaire... ) 
-                        resultat.get(i).add(j);
+                        resultat.get(i).add(trajets.get(j).id);
                        // System.out.println("Boucle 1 -> " + v.toString());
                     }
                 }
@@ -75,7 +75,7 @@ public class Greedy1 {
                         //if(k){
                         //    points += t.bonus;
                        // }
-                        resultat.get(i).add(j);
+                        resultat.get(i).add(trajets.get(j).id);
 
                     }
                 }

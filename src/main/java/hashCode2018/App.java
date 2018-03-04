@@ -5,7 +5,11 @@ import java.io.RandomAccessFile;
 import java.util.*;
 
 /**
- * Hello world!
+ * TO DO  
+ * ajouter un id au trajet pour les retrouver et printer l'id dans le résultat  
+ * compter les points 
+ * swap les trajets si + de points après modulo 
+ * voir pourquoi pas plus de points avec j+1 
  *
  */
 public class App 
@@ -39,11 +43,11 @@ public class App
         		//f1 = new Fichier("/home/ringo/Bureau/hashCode2018/e_high_bonus.in");
         }
   
-    	//Greedy1 g = new Greedy1(f1.tabloTrajet, f1.tabloVoiture); 
-    	//g.run(); 
+    	Greedy1 g = new Greedy1(f1.tabloTrajet, f1.tabloVoiture); 
+    	g.run(); 
 
-        Modulo g = new Modulo(f1.tabloTrajet, f1.tabloVoiture); 
-        g.run(); 
+        //Modulo g = new Modulo(f1.tabloTrajet, f1.tabloVoiture); 
+        //g.run(); 
         
         resultat = g.resultat; 
 
