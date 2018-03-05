@@ -51,6 +51,7 @@ public class Fichier {
             String str;
             int i = 0;
             int newId = 0;
+            int voitureId = 0;
             while ((str = file.readLine()) != null) { //par ligne
                 ArrayList<Integer> firstline = new ArrayList();
                 Scanner s = new Scanner(str);
@@ -65,6 +66,8 @@ public class Fichier {
 
                     for(int j = 0; j < this.nbVoiture;j++){
                         Voiture v = new Voiture();
+                        v.id = voitureId;
+                        voitureId++;
                         v.setDispoMax(this.maxsteps);
                         tabloVoiture.add(v);
                     }

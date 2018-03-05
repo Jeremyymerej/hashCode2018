@@ -9,9 +9,9 @@ import java.util.ArrayList;
 
 public class Modulo extends AbstractAlgorithme {
 	
-	ArrayList<Trajet> trajets = new ArrayList<Trajet>();
-    ArrayList<Voiture> voitures = new ArrayList<Voiture>();
-    ArrayList<ArrayList<Integer>> resultat = new ArrayList<ArrayList<Integer>>();
+	public ArrayList<Trajet> trajets = new ArrayList<Trajet>();
+    public ArrayList<Voiture> voitures = new ArrayList<Voiture>();
+    public ArrayList<ArrayList<Integer>> resultat = new ArrayList<ArrayList<Integer>>();
 
     
     Modulo(ArrayList<Trajet> T, ArrayList<Voiture> V){
@@ -30,7 +30,7 @@ public class Modulo extends AbstractAlgorithme {
     
     
     //on swap les trajets d'une meme voiture
-    void swap1(){
+    public void swap1(){
     	int tmp = 0; 
     	Points p = new Points(resultat, trajets, voitures); 
     	p.compter(); 

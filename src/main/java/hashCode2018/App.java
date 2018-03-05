@@ -3,6 +3,8 @@ package hashCode2018;
 import hashCode2018.Acteurs.Points;
 import hashCode2018.Acteurs.Trajet;
 import hashCode2018.Acteurs.Voiture;
+import hashCode2018.Algo.Greedy1;
+import hashCode2018.Algo.GreedyBatch;
 import hashCode2018.Algo.Modulo;
 import hashCode2018.Fichiers.Fichier;
 
@@ -34,15 +36,16 @@ public class App
         ArrayList<Trajet> tabloTrajet = new ArrayList<Trajet>();
         ArrayList<Voiture> tabloVoiture = new ArrayList<Voiture>();
         fichier.parseInto(tabloTrajet,tabloVoiture);
-    	/*
-    	Greedy1 g = new Greedy1(tabloTrajet, tabloVoiture);
-    	g.run(); 
-        */
 
-        Modulo g = new Modulo(tabloTrajet, tabloVoiture);
-        g.run(); 
-        g.swap1();
-        resultat = g.resultat; 
+    	//Greedy1 g = new Greedy1(tabloTrajet, tabloVoiture);
+        GreedyBatch g = new GreedyBatch(tabloTrajet,tabloVoiture);
+    	g.run(); 
+
+
+//        Modulo g = new Modulo(tabloTrajet, tabloVoiture);
+//        g.run();
+//        g.swap1();
+        resultat = g.resultat;
 
         Points p = new Points(resultat, tabloTrajet, tabloVoiture);
         p.compter();
@@ -73,7 +76,9 @@ public class App
             strResult += "\n";
             //System.out.println();
         }
-        System.out.println(strResult);
+        //System.out.println(strResult);
+        System.out.println(p.points);
+
         //System.out.println(points);
     }
 

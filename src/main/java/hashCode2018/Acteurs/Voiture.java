@@ -6,6 +6,7 @@ public class Voiture {
     public int dispoMax = 0;
     public int x = 0;
     public int y = 0;
+    public int id = 0;
 
     public Voiture() {
 

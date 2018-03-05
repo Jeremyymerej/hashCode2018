@@ -32,7 +32,7 @@ public class Trajet implements Comparable<Trajet> {
                 ", bonus=" + bonus +
                 ", distance=" + distance +
                 ", done=" + done +
-                '}';
+                '}' + "\n";
     }
 
     public int getStartX() {
