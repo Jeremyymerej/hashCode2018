@@ -1,6 +1,7 @@
 package hashCode2018.Algo;
 
 import hashCode2018.Acteurs.Trajet;
+
 import hashCode2018.Acteurs.Voiture;
 
 import java.util.ArrayList;

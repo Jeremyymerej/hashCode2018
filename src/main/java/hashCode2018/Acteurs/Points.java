@@ -71,5 +71,9 @@ public class Points {
 		
 	}
 	
+	public void recompter(){ 
+		points = 0; 
+		compter();
+	}
 
 }

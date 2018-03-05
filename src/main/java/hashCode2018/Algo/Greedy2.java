@@ -1,9 +1,14 @@
-package hashCode2018;
+package hashCode2018.Algo;
+
+import hashCode2018.Acteurs.Trajet;
+import hashCode2018.Acteurs.Points;
+
+import hashCode2018.Acteurs.Voiture;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Greedy2 {
+public class Greedy2 extends AbstractAlgorithme {
 	   ArrayList<Trajet> trajets = new ArrayList<Trajet>();
 	    ArrayList<Voiture> voitures = new ArrayList<Voiture>();
 	    ArrayList<ArrayList<Integer>> resultat = new ArrayList<ArrayList<Integer>>();
@@ -16,7 +21,7 @@ public class Greedy2 {
 	    
 	    
 	  //A chaque trajet on attribue la voiture qui rapporte le plus de points 
-	    void run(){
+	    public void run(){
 	    	
 
 	        for(Voiture v : voitures){

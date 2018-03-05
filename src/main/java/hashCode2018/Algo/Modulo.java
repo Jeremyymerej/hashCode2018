@@ -1,8 +1,13 @@
-package hashCode2018;
+package hashCode2018.Algo;
+
+import hashCode2018.Acteurs.Trajet;
+import hashCode2018.Acteurs.Points;
+
+import hashCode2018.Acteurs.Voiture;
 
 import java.util.ArrayList;
 
-public class Modulo {
+public class Modulo extends AbstractAlgorithme {
 	
 	ArrayList<Trajet> trajets = new ArrayList<Trajet>();
     ArrayList<Voiture> voitures = new ArrayList<Voiture>();
@@ -14,7 +19,7 @@ public class Modulo {
     	this.voitures = V; 
     } 
     
-    void run(){ 
+    public void run(){ 
         for(Voiture v : voitures){
             resultat.add(new ArrayList<Integer>());
         }
