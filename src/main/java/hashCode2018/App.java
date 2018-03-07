@@ -4,6 +4,7 @@ import hashCode2018.Acteurs.Points;
 import hashCode2018.Acteurs.Trajet;
 import hashCode2018.Acteurs.Voiture;
 import hashCode2018.Algo.Greedy1;
+import hashCode2018.Algo.Greedy2;
 import hashCode2018.Algo.GreedyBatch;
 import hashCode2018.Algo.Modulo;
 import hashCode2018.Fichiers.Fichier;
@@ -18,6 +19,8 @@ import static hashCode2018.Fichiers.ExampleLetter.*;
  * compter les points 
  * swap les trajets si + de points après modulo 
  * voir pourquoi pas plus de points avec j+1 
+ * 
+ * un autre algo avec backtrack ?
  * 
  * 
  * REMARQUES 
@@ -38,9 +41,11 @@ public class App
         fichier.parseInto(tabloTrajet,tabloVoiture);
 
     	//Greedy1 g = new Greedy1(tabloTrajet, tabloVoiture);
-        GreedyBatch g = new GreedyBatch(tabloTrajet,tabloVoiture);
-    	g.run(); 
+      //  GreedyBatch g = new GreedyBatch(tabloTrajet,tabloVoiture);
+        Greedy2 g = new Greedy2(tabloTrajet, tabloVoiture);
+        	g.run(); 
 
+        
 
 //        Modulo g = new Modulo(tabloTrajet, tabloVoiture);
 //        g.run();
@@ -49,7 +54,7 @@ public class App
 
         Points p = new Points(resultat, tabloTrajet, tabloVoiture);
         p.compter();
-        System.out.println(p.points);
+        //System.out.println(p.points);
         
         int cpt = 0;
         for(Trajet t : g.trajets){
@@ -67,17 +72,17 @@ public class App
        // System.out.println("!!!!!!!!!!!!!!!STOP!!!!!!!!!!!");
         String strResult = "";
         for(int k = 0; k < resultat.size(); k++){
-            //System.out.print(resultat.get(k).size());
-            strResult += resultat.get(k).size();
+            System.out.print(resultat.get(k).size());
+            //strResult += resultat.get(k).size();
             for(int l =0; l < resultat.get(k).size(); l++){
-                //System.out.print(" " + resultat.get(k).get(l));
-                strResult += " " + resultat.get(k).get(l);
+                System.out.print(" " + resultat.get(k).get(l));
+                //strResult += " " + resultat.get(k).get(l);
             }
-            strResult += "\n";
-            //System.out.println();
+            //strResult += "\n";
+            System.out.println();
         }
-        //System.out.println(strResult);
-        System.out.println(p.points);
+       // System.out.println(strResult);
+        //System.out.println(p.points);
 
         //System.out.println(points);
     }
